@@ -1,0 +1,24 @@
+{
+  "name": "kindergarden-chat",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mskradde/kindergarden-chat.git"
+  },
+  "keywords": [],
+  "author": "Marco Skradde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mskradde/kindergarden-chat/issues"
+  },
+  "homepage": "https://github.com/mskradde/kindergarden-chat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

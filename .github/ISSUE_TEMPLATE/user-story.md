@@ -8,13 +8,16 @@ assignees: mskradde
 ---
 
 # User story 
-As a .. I want to ..
+As a developer I want to setup the basic template
+
 ## Notes / Links  
-The main basic app has two challenging tasks: 
--  ...
--  ...
 
 ## Acceptance criteria
-  - [ ] 
-- [ ]
- - [ ] 
+
+- [ ] Prettier
+- [ ] Eslint
+- [ ] Create-React-App
+- [ ] Storybook
+- [ ] Json-Server
+- [ ] MongoDB
+- [ ] React Router

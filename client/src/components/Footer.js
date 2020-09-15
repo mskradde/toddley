@@ -7,10 +7,7 @@ import SettingsIcon from "../stories/assets/settings-icon.svg";
 
 const MainFooter = styled.footer`
   width: 100%;
-
   background: #ade1cd;
-  border: none;
-  border-radius: 0;
 `;
 
 const Navbar = styled.nav`
@@ -22,7 +19,7 @@ const Navbar = styled.nav`
 
 const NavImage = styled.img`
   margin: 10px 0;
-  opacity: ${({ activeTab }) => (activeTab ? "0.5" : "1")};
+  opacity: ${({ active }) => (active ? "0.5" : "1")};
 `;
 
 function Footer() {
@@ -36,21 +33,21 @@ function Footer() {
             <NavImage
               src={AccountIcon}
               alt="Mein Profil"
-              activeTab={location.pathname === "/account"}
+              active={location.pathname === "/account"}
             />
           </Link>
           <Link to="/">
             <NavImage
               src={ChatIcon}
               alt="Startseite"
-              activeTab={location.pathname === "/"}
+              active={location.pathname === "/"}
             />
           </Link>
           <Link to="/settings">
             <NavImage
               src={SettingsIcon}
               alt="Meine Einstellungen"
-              activeTab={location.pathname === "/settings"}
+              active={location.pathname === "/settings"}
             />
           </Link>
         </Navbar>

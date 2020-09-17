@@ -1,5 +1,6 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
+import Roboto from "./assets/fonts/Roboto-Medium.ttf";
 const GlobalCSS = () => {
   return (
     <Global
@@ -12,12 +13,17 @@ const GlobalCSS = () => {
         :root {
           --bg-main-color: #fbf2e0;
           --text-color-main: #000, 0.9;
-          --text-color-secondary: #fff;
+          --text-color-secondary: #ffffff;
           height: 100vh;
           width: 100vw;
-          font-size: 18px;
         }
         html {
+          @font-face {
+            font-family: "Roboto";
+            src: url(${Roboto}) format("truetype");
+          }
+          font-size: 18px;
+          font-family: "Roboto";
         }
         body {
           background-color: var(--bg-main-color);

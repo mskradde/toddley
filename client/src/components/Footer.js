@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
-import AccountIcon from "../stories/assets/account-icon.svg";
-import ChatIcon from "../stories/assets/message-icon.svg";
-import SettingsIcon from "../stories/assets/settings-icon.svg";
+import AccountIcon from "../assets/account-icon.svg";
+import ChatIcon from "../assets/message-icon.svg";
+import SettingsIcon from "../assets/settings-icon.svg";
 
 const MainFooter = styled.footer`
   width: 100%;

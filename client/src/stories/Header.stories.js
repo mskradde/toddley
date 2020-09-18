@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
 import Header from "../components/Header";
@@ -8,10 +7,6 @@ export default {
   component: Header,
 };
 
-const Template = () => (
-  <Router>
-    <Header />
-  </Router>
-);
+const Template = () => <Header />;
 
-export const MainHeader = Template.bind({});
+export const LargeHeader = Template.bind({});

@@ -12,7 +12,7 @@ const MainHeader = styled.header`
   align-items: center;
 `;
 
-const Heading = styled.h1`
+const Headline = styled.h2`
   color: #ffffff;
   font-size: 1.7rem;
 `;
@@ -23,7 +23,8 @@ const Navbar = styled.nav`
   color: #ffffff;
   width: 100%;
 `;
-const Navbutton = styled.div`
+const Nav = styled.span`
+  display: block;
   color: ${({ active }) => (active ? "#ADE1CD" : "#ffffff")};
   text-decoration: none;
   margin: 0.6em;
@@ -31,8 +32,8 @@ const Navbutton = styled.div`
 
 const AddContactIcon = styled.img`
   position: absolute;
-  right: 3px;
-  margin: 10px 0;
+  right: 2px;
+  margin: 13px 9px;
   display: ${({ active }) => (active ? "inline" : "none")};
 `;
 
@@ -43,20 +44,20 @@ function Header(props) {
   return (
     <>
       <MainHeader>
-        <AddContactIcon
-          active={location.pathname === "/messages"}
-          src={addIcon}
-          alt="Kontakt hinzufügen"
-        />
-        <Heading>{props.heading}</Heading>
+        <Link to="/contacts">
+          <AddContactIcon
+            active={location.pathname === "/messages"}
+            src={addIcon}
+            alt="Kontakt hinzufügen"
+          />
+        </Link>
+        <Headline>{props.headline}</Headline>
         <Navbar>
           <Link to="/">
-            <Navbutton active={location.pathname === "/"}>Channels </Navbutton>
+            <Nav active={location.pathname === "/"}>Channels </Nav>
           </Link>
           <Link to="/messages">
-            <Navbutton active={location.pathname === "/messages"}>
-              Nachrichten
-            </Navbutton>
+            <Nav active={location.pathname === "/messages"}>Nachrichten</Nav>
           </Link>
         </Navbar>
       </MainHeader>
@@ -67,5 +68,5 @@ function Header(props) {
 export default Header;
 
 Header.propTypes = {
-  heading: PropTypes.string.isRequired,
+  headline: PropTypes.string.isRequired,
 };

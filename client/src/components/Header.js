@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
+import addIcon from "../assets/add-contact-icon.svg";
+import PropTypes from "prop-types";
 
 const MainHeader = styled.header`
   width: 100%;
@@ -21,17 +23,32 @@ const Navbar = styled.nav`
   color: #ffffff;
   width: 100%;
 `;
-const Navbutton = styled.p`
+const Navbutton = styled.div`
   color: ${({ active }) => (active ? "#ADE1CD" : "#ffffff")};
+  text-decoration: none;
+  margin: 0.6em;
 `;
 
-function Header() {
+const AddContactIcon = styled.img`
+  position: absolute;
+  right: 3px;
+  margin: 10px 0;
+  display: ${({ active }) => (active ? "inline" : "none")};
+`;
+
+function Header(props) {
   const location = useLocation();
+  //   const [activePage, setActivePage] = useState(true);
 
   return (
     <>
       <MainHeader>
-        <Heading>Alle Channels</Heading>
+        <AddContactIcon
+          active={location.pathname === "/messages"}
+          src={addIcon}
+          alt="Kontakt hinzufügen"
+        />
+        <Heading>{props.heading}</Heading>
         <Navbar>
           <Link to="/">
             <Navbutton active={location.pathname === "/"}>Channels </Navbutton>
@@ -48,3 +65,7 @@ function Header() {
 }
 
 export default Header;
+
+Header.propTypes = {
+  heading: PropTypes.string.isRequired,
+};

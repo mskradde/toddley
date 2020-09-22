@@ -25,8 +25,6 @@ const Circle = styled.div`
 
 const ChannelName = styled.p`
   text-align: center;
-  /* grid-column: 1/5;
-  grid-row: 4/5; */
   grid-area: 4/1/5/5;
   font-size: 0.8em;
   height: 25%;

@@ -7,8 +7,8 @@ const Card = styled.div`
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(4, 25%);
   border-radius: 10%;
-  width: 50vw;
-  height: 50vw;
+  width: 170px;
+  height: 170px;
   background-color: #ffffff;
 `;
 
@@ -18,12 +18,19 @@ const Circle = styled.div`
   background-color: #25386426;
   background-image: url(${({ imgSrc }) => imgSrc});
   border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5em;
 `;
 
 const ChannelName = styled.p`
-  justify-self: center;
-  grid-column: 1/ 5;
-  grid-row: 4 /5;
+  text-align: center;
+  /* grid-column: 1/5;
+  grid-row: 4/5; */
+  grid-area: 4/1/5/5;
+  font-size: 0.8em;
+  height: 25%;
+  padding: 0.3em;
 `;
 
 function ChannelCard({ title, imgSrc }) {

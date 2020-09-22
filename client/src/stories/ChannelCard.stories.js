@@ -1,5 +1,5 @@
 import React from "react";
-import PlusIcon from "../assets/account-icon.svg";
+import PlusIcon from "../assets/plus-icon.svg";
 import ChannelCard from "../components/ChannelCard";
 
 export default {

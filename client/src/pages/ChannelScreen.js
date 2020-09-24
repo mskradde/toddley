@@ -28,7 +28,11 @@ export function ChannelScreen() {
       <Container>
         <Header></Header>
         <Main>
-          <ChannelCard title="Neuer Channel" imgSrc={PlusIcon} />
+          <ChannelCard
+            title="Neuer Channel"
+            imgSrc={PlusIcon}
+            onClick={() => alert("Hallo")}
+          />
         </Main>
         <Footer></Footer>
       </Container>

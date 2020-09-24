@@ -31,10 +31,10 @@ const ChannelName = styled.p`
   padding: 0.3em;
 `;
 
-function ChannelCard({ title, imgSrc }) {
+function ChannelCard({ title, imgSrc, onClick }) {
   return (
     <Card>
-      <Circle imgSrc={imgSrc} />
+      <Circle imgSrc={imgSrc} onClick={onClick} />
 
       <ChannelName>{title}</ChannelName>
     </Card>
@@ -46,5 +46,5 @@ export default ChannelCard;
 ChannelCard.propTypes = {
   title: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
-  onClick: PropTypes.object,
+  onClick: PropTypes.func,
 };

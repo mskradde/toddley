@@ -7,7 +7,7 @@ const Card = styled.div`
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(4, 25%);
   border-radius: 10%;
-  width: 170px;
+  width: 50%;
   height: 170px;
   background-color: #ffffff;
 `;
@@ -46,4 +46,5 @@ export default ChannelCard;
 ChannelCard.propTypes = {
   title: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
+  onClick: PropTypes.object,
 };

@@ -8,24 +8,28 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: repeat(3, 30%);
-  grid-template-columns: repeat(3, 30%);
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+const Main = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
 
-  & > Footer {
-    grid-area: 4/1/5/5;
+  > .ChannelCard {
+    padding: 0.5em;
   }
 `;
-
-function ChannelScreen({ title, imgSrc }) {
+export function ChannelScreen() {
   return (
     <Router>
       <Container>
         <Header></Header>
-        <main>
+        <Main>
           <ChannelCard title="Neuer Channel" imgSrc={PlusIcon} />
-        </main>
+        </Main>
         <Footer></Footer>
       </Container>
     </Router>

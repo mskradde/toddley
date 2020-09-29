@@ -5,12 +5,10 @@ import AccountIcon from "../assets/account-icon.svg";
 import ChatIcon from "../assets/message-icon.svg";
 import SettingsIcon from "../assets/settings-icon.svg";
 
-const MainFooter = styled.footer`
+const Navbar = styled.nav`
   width: 100%;
   background: #ade1cd;
-`;
-
-const Navbar = styled.nav`
+  overflow: scroll;
   display: flex;
   margin: 0.2 em;
   justify-content: space-around;
@@ -26,33 +24,29 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <>
-      <MainFooter>
-        <Navbar>
-          <Link to="/account">
-            <NavImage
-              src={AccountIcon}
-              alt="Mein Profil"
-              active={location.pathname === "/account"}
-            />
-          </Link>
-          <Link to="/">
-            <NavImage
-              src={ChatIcon}
-              alt="Startseite"
-              active={location.pathname === "/"}
-            />
-          </Link>
-          <Link to="/settings">
-            <NavImage
-              src={SettingsIcon}
-              alt="Meine Einstellungen"
-              active={location.pathname === "/settings"}
-            />
-          </Link>
-        </Navbar>
-      </MainFooter>
-    </>
+    <Navbar>
+      <Link to="/account">
+        <NavImage
+          src={AccountIcon}
+          alt="Mein Profil"
+          active={location.pathname === "/account"}
+        />
+      </Link>
+      <Link to="/">
+        <NavImage
+          src={ChatIcon}
+          alt="Startseite"
+          active={location.pathname === "/"}
+        />
+      </Link>
+      <Link to="/settings">
+        <NavImage
+          src={SettingsIcon}
+          alt="Meine Einstellungen"
+          active={location.pathname === "/settings"}
+        />
+      </Link>
+    </Navbar>
   );
 }
 

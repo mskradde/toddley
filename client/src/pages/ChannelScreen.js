@@ -14,14 +14,14 @@ const Container = styled.div`
   grid-template-rows: auto 1fr auto;
   height: 100%;
 `;
-const Main = styled.div`
-  padding: 0 1em 1em 0;
-`;
+const Main = styled.div``;
 
 const NavMain = styled.nav`
   display: flex;
   flex-wrap: wrap;
   max-height: 60%;
+  padding: 0 1em;
+  overflow: auto;
 `;
 
 export function ChannelScreen() {
@@ -92,7 +92,7 @@ export function ChannelScreen() {
               />
               {channels.map((channel) => (
                 <ChannelCard
-                  key={channel.title}
+                  key={channel.id}
                   title={channel.title}
                   imgSrc={channel.imgSrc}
                 />
@@ -109,6 +109,6 @@ export function ChannelScreen() {
 export default ChannelScreen;
 
 ChannelScreen.propTypes = {
-  title: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  imgSrc: PropTypes.string,
 };

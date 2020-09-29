@@ -5,12 +5,9 @@ import AccountIcon from "../assets/account-icon.svg";
 import ChatIcon from "../assets/message-icon.svg";
 import SettingsIcon from "../assets/settings-icon.svg";
 
-// const MainFooter = styled.footer`
-
 const Navbar = styled.nav`
   width: 100%;
   background: #ade1cd;
-
   overflow: scroll;
   display: flex;
   margin: 0.2 em;

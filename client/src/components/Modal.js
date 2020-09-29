@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import PropTypes from "prop-types";
+import BasicForm from "./BasicForm";
 
 const Backdrop = styled.div`
   position: fixed;
@@ -13,26 +14,55 @@ const Backdrop = styled.div`
 `;
 
 const Container = styled.div`
-  position: fixed;
-  top: 20%;
-  bottom: 20%;
-  left: 10%;
-  right: 10%;
   background-color: var(--bg-main-color);
   z-index: 2;
   border-radius: 15px;
-  display: flex;
+  width: 60%;
+  max-width: 500px;
+  height: 40%;
 `;
 
-function Modal({ children }) {
+const ModalContainer = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+`;
+
+function Modal({ value1, value2, onChange1, onChange2, onSubmit }) {
   return (
     <>
       <Backdrop />
-      <Container>{children}</Container>
+      <ModalContainer>
+        <Container>
+          <BasicForm
+            label1="Channel Name"
+            label2="Channel Bild"
+            placeholder1="Channel Name"
+            placeholder2="Channel Bild"
+            btnLabel="Erstellen"
+            value1={value1}
+            value2={value2}
+            onChange1={onChange1}
+            onChange2={onChange2}
+            onSubmit={onSubmit}
+          />
+        </Container>
+      </ModalContainer>
     </>
   );
 }
 
 export default Modal;
 
-Modal.propTypes = { children: PropTypes.node };
+Modal.propTypes = {
+  children: PropTypes.node,
+  value1: PropTypes.string,
+  value2: PropTypes.string,
+  onChange1: PropTypes.func,
+  onChange2: PropTypes.func,
+  onSubmit: PropTypes.func,
+};

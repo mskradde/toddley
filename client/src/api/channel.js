@@ -15,6 +15,5 @@ export async function postNewChannel(channel) {
     body: JSON.stringify(channel),
   });
 
-  console.log(response.ok);
   return response.ok;
 }

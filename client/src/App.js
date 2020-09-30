@@ -1,17 +1,14 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
-import Footer from "./components/Footer";
-
-
+import Footer from "../src/components/Footer";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <h1>Test</h1>
       <Router>
-        <Footer></Footer>
+        <Footer> </Footer>
       </Router>
     </>
   );

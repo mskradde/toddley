@@ -14,22 +14,23 @@ const GlobalCSS = () => {
           --bg-main-color: #fbf2e0;
           --text-color-main: #000, 0.9;
           --text-color-secondary: #ffffff;
-          height: 100vh;
-          width: 100vw;
-        }
-        html {
-          @font-face {
+
+          html {
+            @font-face {
+              font-family: "Roboto";
+              src: url(${Roboto}) format("truetype");
+            }
+            font-size: 18px;
             font-family: "Roboto";
-            src: url(${Roboto}) format("truetype");
           }
-          font-size: 18px;
-          font-family: "Roboto";
-        }
-        body {
-          background-color: var(--bg-main-color);
-          color: var(--text-color-main);
-          margin: 0;
-          padding: 0;
+          body {
+            background-color: var(--bg-main-color);
+            color: var(--text-color-main);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+          }
         }
         a {
           text-decoration: none;

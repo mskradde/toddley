@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ChannelCard from "../components/ChannelCard";
 import { BrowserRouter as Router } from "react-router-dom";
-import PlusIcon from "../assets/plus-icon.svg";
+import PlusIcon from "../assets/icons/plus-icon.svg";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import Modal from "../components/Modal";

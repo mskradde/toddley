@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
-import AccountIcon from "../assets/account-icon.svg";
-import ChatIcon from "../assets/message-icon.svg";
-import SettingsIcon from "../assets/settings-icon.svg";
+import AccountIcon from "../assets/icons/account-icon.svg";
+import ChatIcon from "../assets/icons/message-icon.svg";
+import SettingsIcon from "../assets/icons/settings-icon.svg";
 
 const Navbar = styled.nav`
   width: 100%;

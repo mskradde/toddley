@@ -1,7 +1,7 @@
 import React from "react";
 import BasicForm from "../components/BasicForm";
-import MailIcon from "../assets/mail-icon.svg";
-import PasswortIcon from "../assets/lock-icon.svg";
+import MailIcon from "../assets/icons/mail-icon.svg";
+import PasswortIcon from "../assets/icons/lock-icon.svg";
 
 export default {
   title: "BasicForm",

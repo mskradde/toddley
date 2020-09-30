@@ -1,14 +1,15 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
-import Footer from "../src/components/Footer";
+import ChannelScreen from "./pages/ChannelScreen";
 
 function App() {
   return (
     <>
       <GlobalStyles />
+
       <Router>
-        <Footer> </Footer>
+        <ChannelScreen />
       </Router>
     </>
   );

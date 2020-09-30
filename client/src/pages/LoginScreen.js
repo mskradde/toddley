@@ -73,6 +73,7 @@ const BubbleContainer2 = styled.div`
   @media only screen and (min-height: 800px) {
     bottom: -12%;
     left: -13%;
+  }
 `;
 
 function LoginScreen(props) {

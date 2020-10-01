@@ -98,7 +98,7 @@ function LoginScreen(props) {
           imgSrc2={PasswortIcon}
         />
         <Link to="/register">
-          <p>Registrieren</p>
+          <p>Jetzt registrieren</p>
         </Link>
       </LoginFormContainer>
       <div></div>

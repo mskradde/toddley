@@ -53,8 +53,8 @@ function Header(props) {
         </Link>
         <Headline>{props.headline}</Headline>
         <Navbar>
-          <Link to="/">
-            <Nav active={location.pathname === "/"}>Channels </Nav>
+          <Link to="/channels">
+            <Nav active={location.pathname === "/channels"}>Channels </Nav>
           </Link>
           <Link to="/messages">
             <Nav active={location.pathname === "/messages"}>Nachrichten</Nav>

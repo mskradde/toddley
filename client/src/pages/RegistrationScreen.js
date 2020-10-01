@@ -4,8 +4,9 @@ import Bubble1 from "../assets/icons/bubble-dark-blue.svg";
 import Bubble2 from "../assets/icons/bubble-light-blue.svg";
 import Logo from "../assets/icons/logo.svg";
 import RegistrationForm from "../components/RegistrationForm";
+import { Link } from "react-router-dom";
 
-const LoginContainer = styled.div`
+const RegistrationContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +15,7 @@ const LoginContainer = styled.div`
   overflow: hidden;
 `;
 
-const LoginFormContainer = styled.div`
+const RegistrationFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +29,7 @@ const LoginFormContainer = styled.div`
 
     p {
       margin: 0;
+      font-size: 0.6em;
     }
   }
 `;
@@ -68,21 +70,28 @@ const BubbleContainer2 = styled.div`
 
 function RegistrationScreen(props) {
   return (
-    <LoginContainer>
-      <BubbleContainer1>
-        <BubbleImg1 src={Bubble1} alt="Blue Bubble" />
-      </BubbleContainer1>
+    <>
+      <RegistrationContainer>
+        <BubbleContainer1>
+          <BubbleImg1 src={Bubble1} alt="Blue Bubble" />
+        </BubbleContainer1>
 
-      <LoginFormContainer>
-        <AppLogo src={Logo} alt="Logo Toddley" />
+        <RegistrationFormContainer>
+          <AppLogo src={Logo} alt="Logo Toddley" />
 
-        <RegistrationForm />
-      </LoginFormContainer>
+          <RegistrationForm />
 
-      <BubbleContainer2>
-        <BubbleImg2 src={Bubble2} alt="Light-blue Bubble" />
-      </BubbleContainer2>
-    </LoginContainer>
+          <p>
+            Du hast bereits einen Account? Dann hier{" "}
+            <Link to="/login">einloggen</Link>
+          </p>
+        </RegistrationFormContainer>
+
+        <BubbleContainer2>
+          <BubbleImg2 src={Bubble2} alt="Light-blue Bubble" />
+        </BubbleContainer2>
+      </RegistrationContainer>
+    </>
   );
 }
 

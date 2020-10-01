@@ -5,6 +5,7 @@ const Form = styled.form`
   display: flex;
   flex-flow: column wrap;
   padding: 0.5em;
+  width: 100%;
 `;
 
 const InputContainer = styled.div`
@@ -12,15 +13,12 @@ const InputContainer = styled.div`
   border-radius: 20px;
   margin: 0.3em;
   align-content: center;
-  & > img {
-    margin-left: 0.5em;
-  }
 `;
 
 const Input = styled.input`
   border: none;
   margin: 0.2em;
-  padding: 0.8em;
+  padding: 0.6em;
   border-radius: 20px;
   color: #000, 0.9;
   outline: none;
@@ -38,22 +36,23 @@ const Button = styled.button`
 
 function RegistrationForm() {
   return (
-    <Form>
-      <InputContainer>
-        <Input placeholder="Name" />
-      </InputContainer>
-      <InputContainer>
-        <Input placeholder="Email" />
-      </InputContainer>
-      <InputContainer>
-        <Input placeholder="Passwort" />
-      </InputContainer>
-      <InputContainer>
-        <Input placeholder="Passwort bestätigen" />
-      </InputContainer>
-
-      <Button>Jetzt registrieren</Button>
-    </Form>
+    <>
+      <Form>
+        <InputContainer>
+          <Input placeholder="Name" />
+        </InputContainer>
+        <InputContainer>
+          <Input placeholder="Email" />
+        </InputContainer>
+        <InputContainer>
+          <Input placeholder="Passwort" />
+        </InputContainer>
+        <InputContainer>
+          <Input placeholder="Passwort bestätigen" />
+        </InputContainer>
+        <Button>Jetzt registrieren</Button>
+      </Form>
+    </>
   );
 }
 

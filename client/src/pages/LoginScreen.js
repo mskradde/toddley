@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import styled from "@emotion/styled";
-import BasicForm from "../components/BasicForm";
 import Bubble1 from "../assets/icons/bubble-dark-blue.svg";
 import Bubble2 from "../assets/icons/bubble-light-blue.svg";
 import ProfileIcon from "../assets/icons/profile-icon.svg";
 import Logo from "../assets/icons/logo.svg";
-import MailIcon from "../assets/icons/mail-icon.svg";
-import PasswortIcon from "../assets/icons/lock-icon.svg";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import app from "../firebase";
+import { AuthContext } from "../components/Auth";
 
 const LoginContainer = styled.div`
   display: flex;
@@ -76,7 +75,67 @@ const BubbleContainer2 = styled.div`
   }
 `;
 
-function LoginScreen(props) {
+const Form = styled.form`
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0.5em;
+  width: 100%;
+`;
+
+const InputContainer = styled.div`
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 0.3em;
+  align-content: center;
+`;
+
+const Input = styled.input`
+  border: none;
+  margin: 0.2em;
+  padding: 0.6em;
+  border-radius: 20px;
+  color: #000, 0.9;
+  outline: none;
+`;
+
+const Button = styled.button`
+  background-color: #f96e5c;
+  border: none;
+  border-radius: 20px;
+  margin: 0.3em;
+  padding: 0.8em;
+  color: #fff;
+  outline: none;
+`;
+
+function LoginScreen() {
+  const history = useHistory();
+
+  const handleLogin = useCallback(
+    async (event) => {
+      const { email, password } = event.target.elements;
+      event.preventDefault();
+
+      console.log(email.value);
+      try {
+        const userData = await app
+          .auth()
+          .signInWithEmailAndPassword(email.value, password.value);
+        history.push("/");
+        console.log(userData);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [history]
+  );
+
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <LoginContainer>
       <BubbleContainer1>
@@ -87,16 +146,15 @@ function LoginScreen(props) {
         <AppLogo src={Logo} alt="Logo Toddley" />
 
         <Profile src={ProfileIcon} alt="Profil" />
-
-        <BasicForm
-          label1="Email"
-          label2="Passwort"
-          placeholder1="Email"
-          placeholder2="Passwort"
-          btnLabel="Login"
-          imgSrc1={MailIcon}
-          imgSrc2={PasswortIcon}
-        />
+        <Form onSubmit={handleLogin}>
+          <InputContainer>
+            <Input placeholder="Email" name="email" />
+          </InputContainer>
+          <InputContainer>
+            <Input placeholder="Passwort" name="password" />
+          </InputContainer>
+          <Button>Einloggen</Button>
+        </Form>
         <Link to="/register">
           <p>Jetzt registrieren</p>
         </Link>

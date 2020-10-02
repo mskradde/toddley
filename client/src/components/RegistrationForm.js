@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "@emotion/styled";
+import app from "../firebase";
 
 const Form = styled.form`
   display: flex;
@@ -35,21 +36,33 @@ const Button = styled.button`
 `;
 
 function RegistrationForm() {
+  const handleSignup = useCallback(async (event) => {
+    const { name, email, password } = event.target.elements;
+    event.preventDefault();
+    console.log(name.value);
+    console.log(email.value);
+    try {
+      app.auth().createUserWithEmailAndPassword(email.value, password.value);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSignup}>
         <InputContainer>
-          <Input placeholder="Name" />
+          <Input placeholder="Name" name="name" />
         </InputContainer>
         <InputContainer>
-          <Input placeholder="Email" />
+          <Input placeholder="Email" name="email" />
         </InputContainer>
         <InputContainer>
-          <Input placeholder="Passwort" />
+          <Input placeholder="Passwort" name="password" />
         </InputContainer>
-        <InputContainer>
-          <Input placeholder="Passwort bestätigen" />
-        </InputContainer>
+        {/* <InputContainer>
+          <Input placeholder="Passwort bestätigen" name="confirm-password"/>
+ ()        </InputContainer> */}
         <Button>Jetzt registrieren</Button>
       </Form>
     </>

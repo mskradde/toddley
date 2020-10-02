@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ChannelCard from "../components/ChannelCard";
@@ -8,6 +8,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import Modal from "../components/Modal";
 import { fetchChannels, postNewChannel } from "../api/channel";
+import { AuthContext } from "../components/Auth";
 
 const Container = styled.div`
   display: grid;
@@ -30,17 +31,18 @@ export function ChannelScreen() {
   const [loading, setLoading] = useState(false);
   const [newChannel, setNewChannel] = useState("");
   const [newChannelImg, setNewChannelImg] = useState("");
+  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
       const allChannels = await fetchChannels();
       setChannels(allChannels);
-
+      console.log(currentUser);
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [currentUser]);
 
   async function handleSubmit(event) {
     event.preventDefault();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
-import addIcon from "../assets/add-contact-icon.svg";
+import addIcon from "../assets/icons/add-contact-icon.svg";
 import PropTypes from "prop-types";
 
 const MainHeader = styled.header`
@@ -53,8 +53,8 @@ function Header(props) {
         </Link>
         <Headline>{props.headline}</Headline>
         <Navbar>
-          <Link to="/">
-            <Nav active={location.pathname === "/"}>Channels </Nav>
+          <Link to="/channels">
+            <Nav active={location.pathname === "/channels"}>Channels </Nav>
           </Link>
           <Link to="/messages">
             <Nav active={location.pathname === "/messages"}>Nachrichten</Nav>
